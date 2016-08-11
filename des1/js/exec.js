@@ -306,7 +306,7 @@ $(document).ready(function() {
 			routemaker1.gogo(now);
 			routemaker2.gogo(now);
 		},3000);
-/*
+
 		var toggle = true;
 		setInterval(function(){
 			if(toggle){
@@ -320,7 +320,7 @@ $(document).ready(function() {
 			}
 			toggle = !toggle;
 		},10000);
-*/
+
 });
 
 var urlParams = null;
