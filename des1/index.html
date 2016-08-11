@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" manifest="saveappoffline.appcache">
+
+<head>
+    <title>MAP</title>
+    <meta charset="utf-8">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <!--<link rel="stylesheet" type="text/css" href="css/materialize.min.css">-->
+    <link rel="stylesheet" type="text/css" href="css/sizelab.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <!--<script type="text/javascript" src="js/materialize.min.js"></script>-->
+    <script type="text/javascript" src="js/sizelab.js"></script>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <!-- Template Setting -->
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', 'Microsoft YaHei', 'Noto Sans T Chinese', 'Helvetica Neue', 'Helvetica';
+        }
+    </style>
+    <script>
+        template_width = 1280;
+        template_height = 720;
+    </script>
+    <!-- Template Setting -->
+    <script type="text/javascript" src="js/exec.js"></script>
+
+    <script type="text/javascript" src="pagejson.js"></script>
+    <!-- ===================== End of Standard Render ====================== -->
+</head>
+
+<body>
+    <div class="viewport">
+        <div class="main">
+            <div class="infoA sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="0" sizelabLeft="0" sizelabWidth="33" sizelabHeight="20" sizelabLineHeight="20" sizelabFont="4"></div>
+            <div class="infoB sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="0" sizelabLeft="33" sizelabWidth="33" sizelabHeight="20" sizelabLineHeight="20" sizelabFont="4"></div>
+            <div class="infoC sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="0" sizelabLeft="66" sizelabWidth="34" sizelabHeight="20" sizelabLineHeight="20" sizelabFont="4"></div>
+
+            <img class="imgA1 sizelab_top sizelab_left sizelab_width " src="imgs/logo.png" sizelabTop="2" sizelabLeft="1" sizelabWidth="3" />
+            <div class="textA1 sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="1.2" sizelabLeft="5" sizelabWidth="20" sizelabHeight="13" sizelabLineHeight="13" sizelabFont="1.8">上海轨道交通地铁1号线</div>
+            <div class="textA2 sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="14" sizelabLeft="5.2" sizelabWidth="20" sizelabHeight="3" sizelabLineHeight="3" sizelabFont="0.8">Shanghai Metro Line 1</div>
+
+            <div class="textB1 sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="1.2" sizelabLeft="38" sizelabWidth="20" sizelabHeight="13" sizelabLineHeight="13" sizelabFont="1.8">下一站 : 上海体育馆站</div>
+            <div class="textB2 sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="14" sizelabLeft="38.2" sizelabWidth="20" sizelabHeight="3" sizelabLineHeight="3" sizelabFont="0.8">Next Station : &nbsp;&nbsp;Shanghai Indoor Stadium Station</div>
+            <div class="arrowB1 sizelab_top sizelab_left sizelab_width sizelab_height" sizelabTop="2.5" sizelabLeft="61" sizelabWidth="5" sizelabHeight="20" sizelabLineHeight="20">
+                <div class="arrow">
+                    <a class="arrowcircle" href="#">
+                        <span class="arrowright"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="textC1 sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="1.2" sizelabLeft="70" sizelabWidth="20" sizelabHeight="13" sizelabLineHeight="13" sizelabFont="1.8">列車开往 : 富锦路站</div>
+            <div class="textC2 sizelab_top sizelab_left sizelab_width sizelab_height sizelab_lineheight sizelab_font" sizelabTop="14" sizelabLeft="70.2" sizelabWidth="20" sizelabHeight="3" sizelabLineHeight="3" sizelabFont="0.8">Terminal Station : &nbsp;&nbsp;Fujin Road Station</div>
+            <div class="arrowC1 sizelab_top sizelab_left sizelab_width sizelab_height" sizelabTop="2.5" sizelabLeft="95" sizelabWidth="5" sizelabHeight="20" sizelabLineHeight="20">
+                <div class="arrow">
+                    <a class="arrowcircle" href="#">
+                        <span class="arrowright"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="route_viewport1" class=" route_viewport sizelab_top sizelab_left sizelab_width sizelab_height" sizelabLeft="2" sizelabTop="20" sizelabWidth="45" sizelabHeight="70">
+              <div id="route1" class="route">
+                  <div class="route_point"></div>
+                  <div class="route_name"></div>
+              </div>
+            </div>
+
+            <div id="route_viewport2" class="hide route_viewport sizelab_top sizelab_left sizelab_width sizelab_height" sizelabLeft="0" sizelabTop="20" sizelabWidth="100" sizelabHeight="80">
+              <div id="route2" class="route">
+                  <div class="route_point"></div>
+                  <div class="route_name"></div>
+              </div>
+            </div>
+
+            <img id="imgdoor" class=" imgA1 sizelab_top sizelab_left sizelab_width " src="imgs/B88jE1qIcAEE7ux.png" sizelabTop="40" sizelabLeft="60" sizelabWidth="30" />
+
+<!--
+            <div class="route_viewport sizelab_top sizelab_left sizelab_width sizelab_height" sizelabLeft="0" sizelabTop="20" sizelabWidth="100" sizelabHeight="80">
+                <div class="route">
+                    <div class="route_point"></div>
+                    <div class="route_name"></div>
+                </div>
+            </div>
+-->
+        </div>
+    </div>
+</body>
+
+</html>

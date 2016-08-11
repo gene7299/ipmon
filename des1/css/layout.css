@@ -1,0 +1,323 @@
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0px;
+    overflow: hidden;
+    background: #FFFFFF;
+}
+.hide {
+    display: none;
+}
+.viewport {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.main {
+}
+#route_viewport1 {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-color:#FF0000;
+  border-style: solid;
+  border-width:0px;
+}
+#route1 {
+   width:4200px;
+   height:1080px;
+   position: relative;
+   top:0px;
+   left:0px;
+   transform: scale(1);
+}
+#route_viewport2 {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-color:#FF0000;
+  border-style: solid;
+  border-width:0px;
+}
+#route2 {
+   width:1920px;
+   height:370px;
+   position: relative;
+   top:0px;
+   left:0px;
+   transform: scale(1);
+}
+.infoA {
+    background: #118FA9;
+    color: #FFFFFF;
+    text-align: center;
+    position: absolute;
+    font-weight: bold;
+}
+.infoB {
+    background: #D65E53;
+    color: #FFFFFF;
+    text-align: center;
+    position: absolute;
+    font-weight: bold;
+}
+.infoC {
+    background: #DFB147;
+    color: #FFFFFF;
+    text-align: center;
+    position: absolute;
+    font-weight: bold;
+}
+.imgA1 {
+    position: absolute;
+    z-index: 100;
+}
+.textA1 {
+    color: #FFFFFF;
+    text-align: left;
+    position: absolute;
+    font-weight: bold;
+}
+.textA2 {
+    color: #FFFFFF;
+    text-align: left;
+    position: absolute;
+    font-weight: bold;
+}
+.textB1 {
+    color: #FFFFFF;
+    text-align: left;
+    position: absolute;
+    font-weight: bold;
+}
+.textB2 {
+    color: #FFFFFF;
+    text-align: left;
+    position: absolute;
+    font-weight: bold;
+}
+.textC1 {
+    color: #FFFFFF;
+    text-align: left;
+    position: absolute;
+    font-weight: bold;
+}
+.textC2 {
+    color: #FFFFFF;
+    text-align: left;
+    position: absolute;
+    font-weight: bold;
+}
+.arrowB1 {
+    position: absolute;
+    z-index: 100;
+}
+.arrowC1 {
+    position: absolute;
+    z-index: 100;
+}
+.route_point {
+    background: transparent;
+    color: #000000;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+}
+.route_name {
+    background: transparent;
+    color: #000000;
+    text-align: center;
+    position: absolute;
+}
+.station_point_wrapper {
+    position: absolute;
+    background-color: transparent;
+    height: 100%;
+    text-align: center;
+    z-index: 100;
+}
+.station_point {
+    height: 100%;
+    text-align: center;
+    border-color: #286DBF;
+    border-radius: 50%;
+    border-style: solid;
+    background-color: #FFFFFF;
+}
+.station_point_past {
+    border-color: #286DBF;
+    background-color: #6785C3;
+}
+.station_point_feature {
+    border-color: #286DBF;
+    background-color: #FFFFFF;
+}
+.station_point_current {
+    border-color: #FF3333;
+    background-color: #C34A48;
+}
+.station_name {
+    float: left;
+    text-align: left;
+    color: #000;
+    height: 100%;
+    font-weight: bold;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+}
+.station_name_past {
+    color: #888888;
+}
+.station_name_current {
+    color: #FF3333;
+}
+.point_link {
+    position: absolute;
+    background-color: #FFFFFF;
+    z-index: 90;
+}
+
+/*******************************/
+
+.crumbs {
+    text-align: left;
+}
+.crumbs ul {
+    list-style: none;
+    display: inline-table;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.crumbs ul li {
+    display: inline;
+}
+.crumbs ul li a {
+    display: block;
+    float: left;
+    /*height: 50px;*/
+    background: #286DBF;
+    text-align: center;
+    /*padding-top: 30px;*/
+    /*padding-right: 40px;*/
+    padding-bottom: 0px;
+    padding-left: 0px;
+    position: relative;
+    margin-top: 0px;
+    /*margin-right: 20px;*/
+    margin-bottom: 0px;
+    margin-left: 0px;
+    /*width: 50px;*/
+    font-size: 2px;
+    text-decoration: none;
+    color: #fff;
+}
+.crumbs ul li:first-child a {
+    /*width: 20px;*/
+}
+.crumbs ul li a:after {
+    content: "";
+    /*border-top-width: 40px;*/
+    border-top-style: solid;
+    border-top-color: transparent;
+    /*border-bottom-width: 40px;*/
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    /*border-left-width: 40px;*/
+    border-left-style: solid;
+    border-left-color: #286DBF;
+    position: absolute;
+    /*right: -40px;*/
+    top: 0;
+    z-index: 1;
+}
+.crumbs ul li a:before {
+    content: "";
+    /*border-top-width: 40px;*/
+    border-top-style: solid;
+    border-top-color: transparent;
+    /*border-bottom-width: 40px;*/
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    /*border-left-width: 40px;*/
+    border-left-style: solid;
+    border-left-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.crumbs ul li:first-child a {
+    /*border-top-left-radius: 10px; border-bottom-left-radius: 10px;*/
+}
+.crumbs ul li:first-child a:before {
+    display: none;
+}
+
+/*
+				.crumbs ul li:last-child a {
+					padding-right: 0px;
+					background:#FF0000 ;
+					border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+				}
+
+				.crumbs ul li:last-child a:after {
+					display: none;
+				}
+				*/
+
+.crumbs ul li a .active {
+    background: #fa5ba5 !important;
+}
+.crumbs ul li a:after .active {
+    border-left-color: #fa5ba5;
+}
+
+/***************************/
+
+.arrow {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+.arrowcircle {
+    display: inline-block;
+    border-radius: 50%;
+}
+.arrowleft {
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    border: 0.5em solid #FFF;
+    border-radius: 50%;
+    margin-right: 1.5em;
+}
+.arrowleft:after {
+    content: '';
+    display: inline-block;
+    margin-top: 1.05em;
+    margin-left: 0.6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.5em solid #FFF;
+    border-right: 0.5em solid #FFF;
+    transform: rotate(-135deg);
+}
+.arrowright {
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    border: 0.5em solid #FFF;
+    border-radius: 50%;
+    margin-left: 1.5em;
+}
+.arrowright:after {
+    content: '';
+    display: inline-block;
+    margin-top: 1.05em;
+    margin-left: -0.6em;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.5em solid #FFF;
+    border-right: 0.5em solid #FFF;
+    transform: rotate(45deg);
+}
