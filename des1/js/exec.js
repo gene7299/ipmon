@@ -1,7 +1,8 @@
 //Render Mode
-var stationList = ['莘庄','外环路','莲花路','锦江乐园','上海南站','漕宝路','上海体育馆','徐家汇','衡山路','常熟路','陕西南路','黄陂南路','人民广场','新闸路','汉中路','上海火车站','中山北路','延长路','上海马戏城','汶水路','彭浦新村','共康路','通河新村','呼兰路'];//,'共富新村','宝安公路','友谊西路','富锦路'];
+var stationList = ['莘庄','外环路','莲花路','锦江乐园','上海南站','漕宝路','上海体育馆','徐家汇','衡山路','常熟路','陕西南路','黄陂南路','人民广场','新闸路','汉中路','上海火车站','中山北路','延长路','上海马戏城','汶水路','彭浦新村','共康路','通河新村','呼兰路','共富新村','宝安公路','友谊西路','富锦路'];
 //{disable? transfer stop? start? end? name? enname?  }
-var routemaker = null;
+var routemaker1 = null;
+var routemaker2 = null;
 var _routemaker = function(id) {
 		var handle = {};
 
@@ -15,6 +16,7 @@ var _routemaker = function(id) {
 		handle.namefontsize = 50;
 		handle.animode = '';
 		handle.lineWidth = 16;
+		handle.lineMargin = 8;
 
 		var nowStation = 1;
 		var prevStation = 0;
@@ -22,7 +24,7 @@ var _routemaker = function(id) {
 
 		var widthForOneStation = 100;
 		var cwidth = 50;
-		var cborder = 10;
+		var cborder = cwidth/5;
 		var crlwidth = cwidth + cborder;
 		var namefontsize = 50;
 
@@ -38,6 +40,8 @@ var _routemaker = function(id) {
 				cwidth = handle.cwidth;
 				namefontsize = handle.namefontsize;
 				lineWidth = handle.lineWidth;
+				cborder = cwidth/5;
+				//handle.lineMargin = lineWidth/2;
 				/*
 				if( typeof( window.innerWidth ) == 'number' ) {
 					handle.width = window.innerWidth;
@@ -88,12 +92,12 @@ var _routemaker = function(id) {
 				$(function(){
 					for(var i = 0; i<stationList.length-1 ; i++){
 						$route_point.append('<div id="'+id+'_point_link_'+i+'" class="point_link hide"><div id="'+id+'_crumbs_'+i+'" class="crumbs '+id+'_crumbs"><ul id="'+id+'_crumbs_ul_'+i+'"><li><a id="'+id+'_cline_'+i+'_0" href="#1"></a></li><li><a id="'+id+'_cline_'+i+'_1" href="#2"></a></li><li><a id="'+id+'_cline_'+i+'_2" href="#3"></a></li></ul></div></div>');
-						$('body').append('<style>#'+id+'_point_link_'+i+'{top:'+parseInt((handle.height*handle.routepointRatio-lineWidth)/2)+'px;left:'+parseInt(handle.width*0.005+cwidth+((widthForOneStation)*i))+'px;width:'+ parseInt(widthForOneStation-crlwidth)*3 +'px;height:'+lineWidth+'px;}</style>');
+						$('body').append('<style>#'+id+'_point_link_'+i+'{top:'+parseInt((handle.height*handle.routepointRatio-lineWidth)/2)+'px;left:'+parseInt(handle.width*0.005+cwidth+((widthForOneStation)*i))+'px;width:'+ parseInt(widthForOneStation-crlwidth)*4 +'px;height:'+lineWidth+'px;}</style>');
 					}
 				});
 				var oneOflinktotalLen = parseInt((widthForOneStation-crlwidth)/3)+1;
 				console.log('oneOflinktotalLen='+oneOflinktotalLen);
-				var margin = 8;
+				var margin = handle.lineMargin;
 				var crumbsHeight = parseInt(lineWidth*0.85);
 				var crumbs_padding = lineWidth/2;
 				var crumbsWidth = (oneOflinktotalLen - crumbs_padding - margin);
@@ -248,7 +252,7 @@ $(document).ready(function() {
 		$('.viewport').css('height',viewportV);
 
 		$('#route2').css('width',viewportH);
-		$('#route2').css('height',viewportH*370/1920);
+		$('#route2').css('height',viewportH*263/1366);
 		/*
 		var direction = 'right';
 		setInterval(function(){
@@ -279,11 +283,15 @@ $(document).ready(function() {
 			},500);
 		});
 		*/
-		routemaker1 = _routemaker('route1').cwidth(70).lineWidth(30).animode('partial').namefontsize(70).width(parseInt($('#route1').css('width'))).height(parseInt($('#route1').css('height')));
+		routemaker1 = _routemaker('route1').cwidth(70).lineWidth(30).lineMargin(8).animode('partial').namefontsize(70).width(parseInt($('#route1').css('width'))).height(parseInt($('#route1').css('height')));
 		routemaker1();
 		routemaker1.gogo(1);
-
-		routemaker2 = _routemaker('route2').cwidth(30).lineWidth(16).animode('fullmap').namefontsize(30).width(parseInt($('#route2').css('width'))).height(parseInt($('#route2').css('height')));
+		if(viewportH>1500){
+			routemaker2 = _routemaker('route2').cwidth(30).lineWidth(14).lineMargin(3).animode('fullmap').namefontsize(30).width(parseInt($('#route2').css('width'))).height(parseInt($('#route2').css('height')));
+		}else{
+			routemaker2 = _routemaker('route2').cwidth(20).lineWidth(10).lineMargin(4).animode('fullmap').namefontsize(20).width(parseInt($('#route2').css('width'))).height(parseInt($('#route2').css('height')));
+		}
+		//
 		routemaker2();
 		routemaker2.gogo(2);
 		var now = 0;
@@ -298,7 +306,7 @@ $(document).ready(function() {
 			routemaker1.gogo(now);
 			routemaker2.gogo(now);
 		},3000);
-
+/*
 		var toggle = true;
 		setInterval(function(){
 			if(toggle){
@@ -312,7 +320,7 @@ $(document).ready(function() {
 			}
 			toggle = !toggle;
 		},10000);
-
+*/
 });
 
 var urlParams = null;

@@ -27,7 +27,7 @@ body {
    width:4200px;
    height:1080px;
    position: relative;
-   top:50px;
+   top:0px;
    left:0px;
    transform: scale(1);
 }
