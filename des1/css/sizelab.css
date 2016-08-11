@@ -1,0 +1,19 @@
+.sizelab-verticalmiddle-parent{
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+ /* overflow:hidden;*/
+}
+.sizelab-verticalmiddle-parent:before{
+  content: '';
+  display: inline-block;
+  vertical-align: middle ;
+  height: 100%;
+}
+.sizelab-verticalmiddle-child{
+  display: inline-block;
+  vertical-align: middle;
+ 
+  height: 0px;
+  background: #ccc;
+}
